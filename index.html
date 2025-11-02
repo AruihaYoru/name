@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高機能 造語ジェネレーター</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 800px; margin: auto; }
+        h1, h2 { border-bottom: 2px solid #ccc; padding-bottom: 5px; }
+        .section { margin-bottom: 30px; }
+        .output-box { border: 1px solid #ddd; padding: 15px; margin-top: 10px; background-color: #f9f9f9; min-height: 50px; }
+        .output-box p { margin: 5px 0; font-size: 1.2em; }
+        .control-group { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        button { font-size: 1em; padding: 8px 16px; cursor: pointer; }
+        input[type="text"], select { font-size: 1em; padding: 8px; }
+    </style>
+</head>
+<body>
+
+    <div class="section">
+        <h2>ランダム生成</h2>
+        <div class="control-group">
+            <button id="generateRandomBtn">新しい案を生成</button>
+        </div>
+        <h3>カタカナ語 (10個)</h3>
+        <div id="katakanaOutput" class="output-box"></div>
+        <h3>人名 (10個)</h3>
+        <div id="nameOutput" class="output-box"></div>
+    </div>
+
+
+    <div class="section">
+        <h2>多国籍風 人名ジェネレーター</h2>
+        <div class="control-group">
+            <label for="nameStyle">スタイル選択:</label>
+            <select id="nameStyle">
+                <option value="fantasy">西洋ファンタジー風</option>
+                <option value="slavic">スラブ風</option>
+                <option value="asian">架空アジア風</option>
+            </select>
+            <button id="generateNameStyleBtn">このスタイルで生成</button>
+        </div>
+        <div id="styledNameOutput" class="output-box"></div>
+    </div>
+
+
+    <div class="section">
+        <h2>テンプレートから生成</h2>
+        <p>固定したい文字と、ランダムにしたい部分(`_`または`＿`)を組み合わせて入力してください。<br>例: ア＿ル＿＿, ＿騎士団, シャドウ＿</p>
+        <div class="control-group">
+            <input type="text" id="templateInput" placeholder="例: ア＿ル＿＿">
+            <button id="generateFromTemplateBtn">テンプレートで10個生成</button>
+        </div>
+        <div id="templateOutput" class="output-box"></div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
